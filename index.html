@@ -1,0 +1,490 @@
+<html>
+    <head>
+        <title>Legal Match</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/fonts/fonts.css">
+        <link rel="stylesheet" href="./assets/css/all.css"> <!--Font Awesome CSS-->
+        <link rel="stylesheet" href="./assets/css/base.css">
+        <!-- JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="./assets/js/bootstrap.min.js"></script> -->
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="w-100 px-5 py-2 d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/header-logo.jpg" alt="..."/>
+                </a>
+                <div id="header-text">
+                    <div><i class="fas fa-check text-success mr-2"></i>No fee to present your case</div>
+                    <div><i class="fas fa-check text-success mr-2"></i>Choose from lawyers in your area</div>
+                    <div><i class="fas fa-check text-success mr-2"></i>A 100% confidential service</div>
+                </div>
+            </div>
+        </nav>
+        <div id="main-container" class="container-fluid pt-3">
+            <div class="w-100 px-5">
+                <h1 class="gotham-light">Find a Lawyer for your Legal Issue</h2>
+                <h3 class="font-weight-bold">Fast, Free and Confidential</h3>
+                <div class="row">
+                    <div class="col-6 mt-5">
+                        <form autocomplete="off">
+                            <div class="form-group">
+                                <h5 class="font-weight-bold" for="zipcode">Enter Zip Code or City:</h5>
+                                <div class="w-75 rounded-pill bg-white p-3">
+                                    <div class="row d-flex align-items-center autocomplete">
+                                        <div class="steps font-weight-bold mx-4 rounded-circle p-2 d-flex justify-content-center align-items-center">1</div>
+                                        <input type="text" class="flex-grow-1 typeahead" id="zipcode" placeholder="Does not have to be where you live">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-4">
+                                <h5 class="font-weight-bold" for="category">Choose a category:</h5>
+                                <div class="w-75 rounded-pill bg-white p-3">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="steps font-weight-bold mx-4 rounded-circle p-2 d-flex justify-content-center align-items-center">2</div>
+                                        <!-- <div id="dropdown-step" class="fas fa-1x"></div> -->
+                                            <!-- <select class="flex-grow-1" id="category" onchange="openCategoryModal()">
+                                                <option disabled selected hidden>Click to choose a legal category</option>
+                                                <option>Family</option>
+                                                <option>Criminal Defense</option>
+                                                <option>Business</option>
+                                                <option>Personal Injury</option>
+                                                <option>Bankruptcy & Finances</option>
+                                                <option>Products & Services</option>
+                                                <option>Employment</option>
+                                                <option>Real Estate</option>
+                                                <option>Immigration</option>
+                                            </select> -->
+                                            <div class="custom-select-wrapper flex-grow-1">
+                                                <div class="custom-select">
+                                                    <div class="custom-option-selected d-flex justify-content-between align-items-center" onclick="openDropdown()">
+                                                        <span id="selected-option">Click to choose a legal category</span>
+                                                        <i class="fas fa-chevron-down"></i>
+                                                    </div>
+                                                    <div id="custom-options" class="border border-secondary rounded">
+                                                        <div class="custom-option" onclick="selectOption('Family')">Family</div>
+                                                        <div class="custom-option" onclick="selectOption('Criminal Defense')">Criminal Defense</div>
+                                                        <div class="custom-option" onclick="selectOption('Business')">Business</div>
+                                                        <div class="custom-option" onclick="selectOption('Personal Injury')">Personal Injury</div>
+                                                        <div class="custom-option" onclick="selectOption('Bankruptcy & Finances')">Bankruptcy & Finances</div>
+                                                        <div class="custom-option" onclick="selectOption('Products & Services')">Products & Services</div>
+                                                        <div class="custom-option" onclick="selectOption('Employment')">Employment</div>
+                                                        <div class="custom-option" onclick="selectOption('Real Estate')">Real Estate</div>
+                                                        <div class="custom-option" onclick="selectOption('Immigration')">Immigration</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="w-75 mt-4 text-center">
+                            <h5>Can't find your category? <a class="link-underline" onclick="openOtherModal()">Click here.</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-6 pb-4">
+                        <h4>Clients review LegalMatch lawyers</h4>
+                        <div class="row border-bottom border-white mt-3 py-3">
+                            <div class="col-3 text-center">
+                                <img class="client-img rounded-circle" src="./assets/images/Mitchell.png" alt="..."/>
+                                <div><label class="font-weight-bold mt-2 mb-0">Mitchell M.</label></div>
+                                <div class="client-loc">Cherry Hill, NJ</div>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <label class="font-weight-bold">Family Law</label>
+                                    <div class="ml-3 text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="review-quote truncate-overflow">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus orci, molestie quis lacinia a, euismod feugiat nibh. Nullam ac mauris in ante congue maximus. Duis aliquam velit ac ex pellentesque, eu efficitur odio laoreet.
+                                    </div>
+                                </div>
+                                <div class="w-100 text-right text-warning review-link mt-3">
+                                    <a onclick="openReviewModal()">Read Review <i class="fas fa-book-open ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-bottom border-white py-3">
+                            <div class="col-3 text-center">
+                                <img class="client-img rounded-circle" src="./assets/images/Joel.png" alt="..."/>
+                                <div><label class="font-weight-bold mt-2 mb-0">Joel C.</label></div>
+                                <div class="client-loc">Little Rock, AK</div>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <label class="font-weight-bold">Job & Employment Law</label>
+                                    <div class="ml-3 text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="review-quote truncate-overflow">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus orci, molestie quis lacinia a, euismod feugiat nibh. Nullam ac mauris in ante congue maximus. Duis aliquam velit ac ex pellentesque, eu efficitur odio laoreet.
+                                    </div>
+                                </div>
+                                <div class="w-100 text-right text-warning review-link mt-3">
+                                    <a onclick="openReviewModal()">Read Review <i class="fas fa-book-open ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-3 text-center">
+                                <img class="client-img rounded-circle" src="./assets/images/Brigida.png" alt="..."/>
+                                <div><label class="font-weight-bold mt-2 mb-0">Brigida R.</label></div>
+                                <div class="client-loc">Dallas, TX</div>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    <label class="font-weight-bold">Family Law</label>
+                                    <div class="ml-3 text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="review-quote truncate-overflow">
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus orci, molestie quis lacinia a, euismod feugiat nibh. Nullam ac mauris in ante congue maximus. Duis aliquam velit ac ex pellentesque, eu efficitur odio laoreet.
+                                    </div>
+                                </div>
+                                <div class="w-100 text-right text-warning review-link mt-3">
+                                    <a onclick="openReviewModal()">Read Review <i class="fas fa-book-open ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="w-100 px-5 py-4">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="./assets/images/footer-logo.jpg" />
+                    </div>
+                    <div class="col-8 text-muted">
+                        <div class="w-100 text-center">
+                            <label>User Agreement</label>
+                            <i class="fas fa-circle fa-xs mx-4"></i>
+                            <label>Privacy Policy</label>
+                            <i class="fas fa-circle fa-xs mx-4"></i>
+                            <label>Site Map</label>
+                        </div>
+                        <div class="col-12 text-center client-loc mt-4">
+                            Copyright 1999-2016 LegalMatch. All rights reserved. Legalmatch <i class="far fa-registered"></i>, the LegalMatch logo, and the tradedress are trademarks of LegalMatch. Patents Pending.
+                        </div>
+                    </div>
+                    <div class="col-2 text-right">
+                        <div>
+                            <img src="./assets/images/truste-logo.jpg" />
+                        </div>
+                        <div class="mt-3">
+                            <img src="./assets/images/bbbrating.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </body>
+    <div id="category-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-end">
+                        <button type="button" class="close mr-3" data-dismiss="modal" aria-label="Close" onclick="closeCategoryModal()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                        <div class="steps font-weight-bold mx-3 rounded-circle p-2 d-flex justify-content-center align-items-center">3</div>
+                        <div>Which <span class="font-weight-bold">Family law</span> issue(s) apply to your case?</div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label pl-3">Adoptions</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label pl-3">Guardianship</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label pl-3">Child Custody and Visitation</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label pl-3">Paternity</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input mr-4">
+                                    <label class="form-check-label pl-3">Child Support</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label pl-3">Separations</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label pl-3">Divorce</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label pl-3">Spousal Support or Alimony</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 my-3 text-center">
+                        <button class="rounded-pill py-3 px-4 find-button">
+                            FIND A LAWYER NOW
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="clientreview-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="col-12">
+                        <div class="row d-flex justify-content-between align-items-center border-bottom border-dark">
+                            <h4 class="ml-3">CLIENT REVIEWS</h4>
+                            <button type="button" class="close mr-3" data-dismiss="modal" aria-label="Close" onclick="closeReviewModal()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row py-2">
+                            <img class="client-img rounded-circle" src="./assets/images/Brigida.png" alt="..."/>
+                            <div class="ml-3">
+                                <h3 class="mb-0">Brigida R.</h3>
+                                <div><label class="text-muted mb-0">Dallas, TX</label></div>
+                                <div><label>Family Law</label></div>
+                            </div>
+                        </div>
+                        <div class="row border-bottom border-dark">
+                            <h4>Rating</h4>
+                            <h5 class="ml-2">(29 users)</h5>
+                            <div class="ml-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                            </div>
+                        </div>
+                        <div class="row py-3 border-bottom border-dark">
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label class="font-weight-bold">Overall</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Responded in a timely manner</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-secondary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Answered questions clearly</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Understood needs</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-secondary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Gave complete and clear information</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Knowledgeable in legal area</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Good value for money</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Would hire again</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-secondary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-100">
+                                <div class="row">
+                                    <div class="col-8"><label>Would recommend to friend</label></div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                    <label class="font-weight-bold ml-2"> by Dexter Marchal, 06/10/2016</label>
+                                </div>
+                            </div>
+                            <label>
+                                Deb did a great job. Got my bench warrant set aside... was sure I was going to jail.. phew. Judge seemed to respect her
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-end">
+                        <a class="close-link mr-3" onclick="closeReviewModal()">CLOSE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="other-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-between align-items-top">
+                        <div>
+                            <h4 class="ml-3 mb-0">OTHER CATEGORIES</h4>
+                            <label class="ml-3">Choose the category that best fits your case</label>
+                        </div>
+                        <button type="button" class="close mr-3" data-dismiss="modal" aria-label="Close" onclick="closeOtherModal()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="col-12 my-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="py-1"><a class="category-link">Abuse (Child, Domestic, Sexual)</a></div>
+                                <div class="py-1"><a class="category-link">Agencies & Administration</a></div>
+                                <div class="py-1"><a class="category-link">Automobile ( DUI, Crimes, Speeding )</a></div>
+                                <div class="py-1"><a class="category-link">Automobiles ( Accidents, Insurance )</a></div>
+                                <div class="py-1"><a class="category-link">Banking ( Business, Consumer )</a></div>
+                                <div class="py-1"><a class="category-link">Bars & Restaurants</a></div>
+                                <div class="py-1"><a class="category-link">Business Formation & Dissolution</a></div>
+                                <div class="py-1"><a class="category-link">Children (Adoption, Custody, Support)</a></div>
+                                <div class="py-1"><a class="category-link">Class Actions (Bad Drugs, Products)</a></div>
+                                <div class="py-1"><a class="category-link">Commercial Law and Contracts</a></div>
+                                <div class="py-1"><a class="category-link">Commercial Real Estate</a></div>
+                                <div class="py-1"><a class="category-link">Constitutional Law</a></div>
+                                <div class="py-1"><a class="category-link">Construction (Disputes, Liens)</a></div>
+                                <div class="py-1"><a class="category-link">Categories Item Here</a></div>
+                            </div>
+                            <div class="col-6">
+                                <div class="py-1"><a class="category-link">Loremipsum Dolorsitamet,</a></div>
+                                <div class="py-1"><a class="category-link">Lonsectetur Scingelit  (Baseererkj, Mereit)</a></div>
+                                <div class="py-1"><a class="category-link">Miam Euvelit</a></div>
+                                <div class="py-1"><a class="category-link">Mempor Auctor (Estiarma, Toeruslej)</a></div>
+                                <div class="py-1"><a class="category-link">Nisultricies Dictumest.</a></div>
+                                <div class="py-1"><a class="category-link">Ntfring Sodalelit (Aeeticl Restoustoust)</a></div>
+                                <div class="py-1"><a class="category-link">Ntvarius Lectus & Congue </a></div>
+                                <div class="py-1"><a class="category-link">Pellentesque</a></div>
+                                <div class="py-1"><a class="category-link">Rigula Aliquamattis (Nestusotu, Wewreist)</a></div>
+                                <div class="py-1"><a class="category-link">Set Tigulempor</a></div>
+                                <div class="py-1"><a class="category-link">Sehicula Sedsitamet</a></div>
+                                <div class="py-1"><a class="category-link">Seque Nesturre </a></div>
+                                <div class="py-1"><a class="category-link">Tollis Gaurissed</a></div>
+                                <div class="py-1"><a class="category-link">Tempor Auctor (Estiarma, Toeruslej)</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <script src="./assets/js/typeahead.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/dropdown.js"></script>
+</html>
